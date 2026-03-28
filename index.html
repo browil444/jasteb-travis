@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasteb Travis - Official Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header Elegant -->
+        <header>
+            <div class="logo">
+                <span class="logo-icon">✦</span>
+                <h1>Jasteb Travis</h1>
+            </div>
+            <p class="tagline">Ress Gacor, Deres, Murni, Jelas panen akun</p>
+        </header>
+
+        <!-- Steps / Proses -->
+        <div class="steps">
+            <div class="step active" id="step1">
+                <div class="step-circle">1</div>
+                <span>Pilih Produk</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="step2">
+                <div class="step-circle">2</div>
+                <span>Pembayaran</span>
+            </div>
+            <div class="step-line"></div>
+            <div class="step" id="step3">
+                <div class="step-circle">3</div>
+                <span>Konfirmasi</span>
+            </div>
+        </div>
+
+        <!-- Step 1: Pilih Produk -->
+        <div class="step-content" id="content1">
+            <h2>Pilih Produk</h2>
+            <div class="products">
+                <div class="product-card" data-id="1" data-name="70+ Ress" data-price="5000">
+                    <div class="product-image"></div>
+                    <h3>70+ Ress</h3>
+                    <div class="price">Rp 5.000</div>
+                    <button class="select-product">Pilih</button>
+                </div>
+                <div class="product-card" data-id="2" data-name="150+ Ress" data-price="10000">
+                    <div class="product-image"></div>
+                    <h3>150+ Ress</h3>
+                    <div class="price">Rp 10.000</div>
+                    <button class="select-product">Pilih</button>
+                </div>
+                <div class="product-card" data-id="3" data-name="250+ Ress" data-price="15000">
+                    <div class="product-image"></div>
+                    <h3>250+ Ress</h3>
+                    <div class="price">Rp 15.000</div>
+                    <button class="select-product">Pilih</button>
+                </div>
+                <div class="product-card" data-id="4" data-name="300+ Ress" data-price="20000">
+                    <div class="product-image"></div>
+                    <h3>300+ Ress</h3>
+                    <div class="price">Rp 20.000</div>
+                    <button class="select-product">Pilih</button>
+                </div>
+                <div class="product-card" data-id="5" data-name="400+ Ress" data-price="25000">
+                    <div class="product-image"></div>
+                    <h3>400+ Ress</h3>
+                    <div class="price">Rp 25.000</div>
+                    <button class="select-product">Pilih</button>
+                </div>
+                <div class="product-card" data-id="6" data-name="600+ Ress" data-price="35000">
+                    <div class="product-image"></div>
+                    <h3>600+ Ress</h3>
+                    <div class="price">Rp 35.000</div>
+                    <button class="select-product">Pilih</button>
+                </div>
+            </div>
+            <div class="selected-info">
+                <div class="selected-label">Produk Terpilih</div>
+                <div id="selectedProduct" class="selected-value">Belum ada produk</div>
+            </div>
+            <button class="next-btn" id="next1" disabled>Lanjut ke Pembayaran →</button>
+        </div>
+
+        <!-- Step 2: Pembayaran -->
+        <div class="step-content" id="content2" style="display:none">
+            <h2>Metode Pembayaran</h2>
+            <div class="payment-methods">
+                <div class="payment-card" data-method="DANA">
+                    <div class="payment-icon"></div>
+                    <h3>DANA</h3>
+                    <p>Transfer ke DANA</p>
+                </div>
+                <div class="payment-card" data-method="QRIS">
+                    <div class="payment-icon"></div>
+                    <h3>QRIS</h3>
+                    <p>Scan QRIS</p>
+                </div>
+            </div>
+            <div class="selected-payment">
+                <span class="selected-label">Metode dipilih:</span>
+                <strong id="selectedMethod">-</strong>
+            </div>
+            <div class="button-group">
+                <button class="prev-btn" id="prev2">← Kembali</button>
+                <button class="next-btn" id="next2" disabled>Lanjut ke Konfirmasi →</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Konfirmasi & Kirim -->
+        <div class="step-content" id="content3" style="display:none">
+            <h2>Konfirmasi Pesanan</h2>
+            
+            <div class="order-summary">
+                <h3>Ringkasan Pesanan</h3>
+                <div id="orderSummary"></div>
+                <div class="total-price">
+                    <span>Total</span>
+                    <span id="totalAmount">Rp 0</span>
+                </div>
+            </div>
+
+            <div class="payment-info" id="paymentInfo">
+                <!-- Payment details will be inserted here -->
+            </div>
+
+            <div class="proof-section">
+                <h3>Upload Bukti Pembayaran</h3>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="proofImage" accept="image/*" hidden>
+                    <div class="upload-icon"></div>
+                    <p>Klik untuk upload bukti transfer</p>
+                    <span class="upload-hint">JPG, PNG (max 5MB)</span>
+                </div>
+                <div id="imagePreview"></div>
+            </div>
+
+            <div class="button-group">
+                <button class="prev-btn" id="prev3">← Kembali</button>
+                <button class="send-btn" id="sendOrder">Kirim ke WhatsApp →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
